@@ -4,14 +4,17 @@
 </section>
 
 <p> The current count is: <strong><%= @count %></strong></p>
-<section>
+<section class="row">
+  <article class="column">
   <%= form_for @conn, Routes.page_path(@conn, :update), fn form -> %>
   <%= number_input form, :increment %>
     <%= submit "Add" %>
   <% end %>
-
+  </article>
+  <article class="column">
   <%= form_for @conn, Routes.page_path(@conn, :update), fn form -> %>
   <%= number_input form, :decrement %>
     <%= submit "Subtract" %>
   <% end %>
+  </article>
 </section>
