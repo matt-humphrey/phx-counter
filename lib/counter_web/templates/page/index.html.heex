@@ -1,0 +1,17 @@
+<section class="phx-hero">
+  <h1>Counter</h1>
+  <p>Practice those counting skills!</p>
+</section>
+
+<p> The current count is: <strong><%= @count %></strong></p>
+<section>
+  <%= form_for @conn, Routes.page_path(@conn, :update), fn form -> %>
+  <%= number_input form, :increment %>
+    <%= submit "Add" %>
+  <% end %>
+
+  <%= form_for @conn, Routes.page_path(@conn, :update), fn form -> %>
+  <%= number_input form, :decrement %>
+    <%= submit "Subtract" %>
+  <% end %>
+</section>
